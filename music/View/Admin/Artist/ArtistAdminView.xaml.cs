@@ -27,23 +27,24 @@ namespace music.View.Admin
     {
         ArtistViewModel artistVM = new ArtistViewModel();
         Frame MainContent;
-        public ArtistAdminView()
-        {
-            InitializeComponent();
-            LoadSingerData();
-        }
 
         public ArtistAdminView(Frame MainContent)
         {
             InitializeComponent();
-            LoadSingerData();
             this.MainContent = MainContent;
+            LoadSingerData();
         }
 
         private void btnNewArtist_Click( object sender, RoutedEventArgs e )
         {
             NewArtistView newArtist = new NewArtistView(null, "add", MainContent);
             newArtist.Show();
+            newArtist.Closed += NewArtist_Closed;
+        }
+
+        private void NewArtist_Closed( object sender, EventArgs e )
+        {
+            MainContent.Navigate(new ArtistAdminView(MainContent));
         }
 
         private void LoadSingerData()

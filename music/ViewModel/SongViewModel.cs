@@ -238,5 +238,19 @@ namespace music.ViewModel
         {
             return DataProvider.Ins.DB.CLIENT_VIEW_SONG.ToList();
         }
+
+        public int GetViewsOfSong(SONG song)
+        {
+            var songs = DataProvider.Ins.DB.CLIENT_VIEW_SONG.Where(View => View.songId == song.id);
+            if (songs.Count() > 0 )
+            {
+                var views = DataProvider.Ins.DB.CLIENT_VIEW_SONG.Where(View => View.songId == song.id)
+                                                           .GroupBy(view => view.songId)
+                                                           .Select(view => view.Sum(x => x.currentViews))
+                                                           .ToList();
+                return (int) views.First();
+            }
+            return 0;
+        }
     }
 }

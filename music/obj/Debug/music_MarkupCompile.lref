@@ -2,6 +2,8 @@
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\App.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\MainWindow.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\AccountView.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Actist\ActistItemView.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Actist\ArtistView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Admin\AccountAdminView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Admin\Advertisement\AdvertisementAdminView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Admin\Album\AlbumAdminView.xaml;;
@@ -16,7 +18,8 @@ FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Admin
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Admin\Topic\TopicAdminView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Admin\Topic\TopicItemView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\AlbumView.xaml;;
-FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\ArtistView.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Album\AlbumItem.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Album\AlbumItemView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\FavoriteListView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\ForgetPassword\ResetPassword.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\ForgetPassword\VerifyAccountView.xaml;;
@@ -32,10 +35,11 @@ FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Signu
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\SongInDeviceView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\CommentItemView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\PostSongOnFacebookView.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\SetTimeToStopView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\ShareSongView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\SongItemView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\SongView.xaml;;
-FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\TopicView.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Topic\TopicItemView.xaml;;
+FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Topic\TopicView.xaml;;
 FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\VideoView.xaml;;
-FE:\Projects\Phát triển phần mềm OOP\App\Ungdungnghenhac\music\View\Song\SetTimeToStopView.xaml;;
 

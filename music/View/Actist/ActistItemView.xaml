@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="music.View.Actist.ActistItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:music.View.Actist"
+             mc:Ignorable="d" x:Name="controlTopic"
+             d:DesignHeight="120" d:DesignWidth="800" Background="White" PreviewMouseDown="controlTopic_PreviewMouseDown" Cursor="Hand" MouseMove="controlTopic_MouseMove" MouseLeave="controlTopic_MouseLeave">
+    <Border Height="120" BorderThickness="0 1 0 1" BorderBrush="LightGray">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="100"
+                    Width="100"
+                    Height="100"
+                    HorizontalAlignment="Center">
+                <Image x:Name="singerImage"
+                           Source="/Resources/mono.jpg"
+                           Stretch="UniformToFill">
+                    <Image.Clip>
+                        <RectangleGeometry RadiusX="10"
+                                           RadiusY="10"
+                                           Rect="0, 0, 100, 100"/>
+                    </Image.Clip>
+                </Image>
+            </Border>
+
+            <TextBlock Grid.Row="1" x:Name="tbSingerName" Grid.Column="1" Text="JAZZ"  VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold"/>
+        </Grid>
+    </Border>
+</UserControl>
+

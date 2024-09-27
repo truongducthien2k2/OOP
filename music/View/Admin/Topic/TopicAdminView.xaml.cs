@@ -25,10 +25,6 @@ namespace music.View.Admin
     {
         TopicViewModel topicVM = new TopicViewModel();
         Frame MainContent;
-        public TopicAdminView()
-        {
-            InitializeComponent();
-        }
 
         public TopicAdminView(Frame MainContent)
         {
@@ -41,6 +37,12 @@ namespace music.View.Admin
         {
             NewTopicView newTopic = new NewTopicView(null, "add", MainContent);
             newTopic.Show();
+            newTopic.Closed += NewTopic_Closed;
+        }
+
+        private void NewTopic_Closed( object sender, EventArgs e )
+        {
+            MainContent.Navigate(new TopicAdminView(MainContent));
         }
 
         private void LoadTopics()

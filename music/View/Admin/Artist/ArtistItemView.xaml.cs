@@ -31,10 +31,10 @@ namespace music.View.Admin.Artist
         public ArtistItemView(SINGER artist, Frame MainContent)
         {
             InitializeComponent();
+            this.MainContent = MainContent;
             artistId.Text = artist.id.ToString();
             artistName.Text = artist.singerName;
             artistImage.Source = new BitmapImage(new Uri(artist.singerImage));
-            this.MainContent = MainContent;
             this.artist = artist;
         }
 
@@ -42,6 +42,12 @@ namespace music.View.Admin.Artist
         {
             NewArtistView newArtist = new NewArtistView(artist, "adjust", MainContent);
             newArtist.Show();
+            newArtist.Closed += NewArtist_Closed;
+        }
+
+        private void NewArtist_Closed( object sender, EventArgs e )
+        {
+            MainContent.Navigate(new ArtistAdminView(MainContent));
         }
     }
 }

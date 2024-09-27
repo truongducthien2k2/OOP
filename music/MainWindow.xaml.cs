@@ -15,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using music.View.Topic;
+using music.View.Album;
+using music.View.Actist;
 
 namespace music
 {
@@ -46,27 +49,19 @@ namespace music
             /// Xử lý khi btnRandom được chọn
             if ( isRandom )
             {
-
-            }
-        }
-
-        public void LoadSong(int indexOfSong)
-        {
-            this.indexOfSong = indexOfSong;
-            btnPlay.Visibility = Visibility.Visible;
-            btnPause.Visibility = Visibility.Hidden;
-            if (indexOfSong != -1)
-            {
-                if (songVM.GetAllSong().Count > 0)
+                if (indexOfSong < songVM.GetAllSong().Count - 1)
                 {
-                    song = songVM.GetAllSong() [this.indexOfSong];
-    ;               ImageViewer.Source = new BitmapImage(new Uri(song.songImage));
-                    tbSongName.Text = song.songName;
-                    tbSingerName.Text = songVM.GetAllSinger().Where(singer => singer.id == song.singerId).Select(singer => singer.singerName).First();
-                    player.Open(new Uri(song.songCode));
+                    indexOfSong++;
+                    LoadSong(indexOfSong);
+                }
+                else
+                {
+                    indexOfSong = 0;
+                    LoadSong(indexOfSong);
                 }
             }
         }
+        
 
         protected override void OnSourceInitialized( EventArgs e )
         {
@@ -110,8 +105,12 @@ namespace music
                 else
                 {
                     StoreData();
-                    navFrame.Navigate(new HomeView());
+                    navFrame.Navigate(new SongView(ImageViewer, tbSongName, tbSingerName, player));
                 }
+            }
+            else
+            {
+                navFrame.Navigate(new SongView(ImageViewer, tbSongName, tbSingerName, player));
             }
         }
 
@@ -154,17 +153,17 @@ namespace music
 
         private void topicBtn_Click( object sender, RoutedEventArgs e )
         {
-            navFrame.Navigate(new TopicView());
+            navFrame.Navigate(new TopicView(ImageViewer, tbSongName, tbSingerName, player, null, navFrame));
         }
 
         private void albumBtn_Click( object sender, RoutedEventArgs e )
         {
-            navFrame.Navigate(new AlbumView());
+            navFrame.Navigate(new AlbumItem(ImageViewer, tbSongName, tbSingerName, player, null, navFrame));
         }
 
         private void artistBtn_Click( object sender, RoutedEventArgs e )
         {
-            navFrame.Navigate(new ArtistView());
+            navFrame.Navigate(new ArtistView(ImageViewer, tbSongName, tbSingerName, player, null, navFrame));
         }
 
         private void songBtn_Click( object sender, RoutedEventArgs e )
@@ -207,6 +206,24 @@ namespace music
         {
             song = songVM.GetAllSong().Where(song => song.songName == tbSongName.Text).First();
             return songVM.GetAllSong().IndexOf(song);
+        }
+
+        public void LoadSong( int indexOfSong )
+        {
+            this.indexOfSong = indexOfSong;
+            btnPlay.Visibility = Visibility.Visible;
+            btnPause.Visibility = Visibility.Hidden;
+            if ( indexOfSong != -1 )
+            {
+                if ( songVM.GetAllSong().Count > 0 )
+                {
+                    song = songVM.GetAllSong() [this.indexOfSong];
+                    ImageViewer.Source = new BitmapImage(new Uri(song.songImage));
+                    tbSongName.Text = song.songName;
+                    tbSingerName.Text = songVM.GetAllSinger().Where(singer => singer.id == song.singerId).Select(singer => singer.singerName).First();
+                    player.Open(new Uri(song.songCode));
+                }
+            }
         }
 
         private void btnPlay_Click( object sender, RoutedEventArgs e )
